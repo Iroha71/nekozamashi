@@ -59,6 +59,7 @@ class AfterActivity : AppCompatActivity() {
             Toast.makeText(this, "+" + likePoint + "好感度", Toast.LENGTH_LONG).show()
             gifView2.visibility = View.VISIBLE
             gifView.visibility = View.INVISIBLE
+            stopBtn.isEnabled=false
             getCatInfo(likePoint)
         }
     }
