@@ -9,7 +9,6 @@ import android.view.WindowManager
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.neko.entity.ChangeLpResult
-import com.example.neko.entity.Responses
 import com.example.neko.interfece.GetCatInfoInterface
 import com.example.neko.interfece.UpdateLikeRateInterface
 import kotlinx.android.synthetic.main.activity_after.*
@@ -81,7 +80,12 @@ class AfterActivity : AppCompatActivity() {
         var resMessage:String?=null
         override fun onResponse(call: Call<ChangeLpResult>, response: Response<ChangeLpResult>) {
             val r:String=response.body()!!.result
-            resMessage=r
+            if(r=="success"){
+                resTxt.text="にゃにゃ！！"
+                like_rate_txt.text="好感度"+response.body()!!.info.like_rate.toString()
+            }else{
+                resTxt.text="にゃー。。。"
+            }
         }
 
         override fun onFailure(call: Call<ChangeLpResult>, t: Throwable) {
