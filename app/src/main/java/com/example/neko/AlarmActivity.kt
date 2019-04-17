@@ -29,7 +29,7 @@ class AlarmActivity : AppCompatActivity() {
             //タイマーをセット
             var calendar:Calendar= Calendar.getInstance()
             calendar.timeInMillis=System.currentTimeMillis()
-            calendar.add(Calendar.SECOND,7)
+            calendar.add(Calendar.SECOND,5)
 
             //レシーバの起動
             val intent=Intent(this,AlarmBroadcastReceiver::class.java)
